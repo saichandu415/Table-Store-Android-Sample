@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RemoteConfig</string>
+
+    <!-- Alibaba TableStore Service details-->
+    <!-- Please replace this details with your own-->
+    <!--Public Endpoint-->
+    <string name="Endpoint"></string>
+    <!-- Access ID -->
+    <string name="AccessKey"></string>
+    <!-- Access key Secret -->
+    <string name="AccessKeySecret"></string>
+    <!-- Queue Names -->
+    <string name="InstanceName">AndroidDemo</string>
+    
+    <!--App Related Strings-->
+    <string name="NameHint">Name</string>
+
+</resources>
