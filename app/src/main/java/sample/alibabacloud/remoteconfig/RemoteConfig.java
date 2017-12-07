@@ -8,6 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.alicloud.openservices.tablestore.SyncClient;
+import com.alicloud.openservices.tablestore.model.ColumnValue;
+import com.alicloud.openservices.tablestore.model.PrimaryKey;
+import com.alicloud.openservices.tablestore.model.PrimaryKeyBuilder;
+import com.alicloud.openservices.tablestore.model.PrimaryKeyValue;
+import com.alicloud.openservices.tablestore.model.PutRowRequest;
+import com.alicloud.openservices.tablestore.model.RowPutChange;
+
+import sample.alibabacloud.remoteconfig.model.ColumnData;
+
 public class RemoteConfig extends Activity implements View.OnClickListener {
 
     //Fetch class level variables
@@ -49,10 +59,27 @@ public class RemoteConfig extends Activity implements View.OnClickListener {
                     .append(ageMinValue.getText())
                     .append("\nMaximum Age : ")
                     .append(ageMaxValue.getText())
-                    .append("\nUpdated Image Value :")
+                    .append("\nUpdated Image Value : ")
                     .append(imageValue.getText());
 
             output.setText(opBuf);
+
         }
+    }
+
+    private static void putRow(SyncClient client, ColumnData cData) {
+        // Creating Primary Key
+        PrimaryKeyBuilder primaryKeyBuilder = PrimaryKeyBuilder.createPrimaryKeyBuilder();
+        primaryKeyBuilder.addPrimaryKeyColumn(WelcomeActivity.PRIMARY_KEY_NAME, PrimaryKeyValue.fromString(WelcomeActivity.PRIMARY_KEY_VALUE));
+        PrimaryKey primaryKey = primaryKeyBuilder.build();
+
+        RowPutChange rowPutChange = new RowPutChange(WelcomeActivity.TABLE_NAME, primaryKey);
+
+        rowPutChange.addColumn(WelcomeActivity.COUNT_KEY,ColumnValue.fromString(cData.getCharCount()));
+        rowPutChange.addColumn(WelcomeActivity.MIN_AGE,ColumnValue.fromString(cData.getMinAge()));
+        rowPutChange.addColumn(WelcomeActivity.MAX_AGE,ColumnValue.fromString(cData.getMaxAge()));
+        rowPutChange.addColumn(WelcomeActivity.IMG_NUM,ColumnValue.fromString(cData.getImageNum()));
+
+        client.putRow(new PutRowRequest(rowPutChange));
     }
 }
