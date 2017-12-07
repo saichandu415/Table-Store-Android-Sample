@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
+
         nameInputLayout = findViewById(R.id.nameInputLayout);
         nameValue = findViewById(R.id.nameValue);
         ageValue = findViewById(R.id.ageValue);
@@ -118,7 +120,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static void createTable(SyncClient client) {
         TableMeta tableMeta = new TableMeta(TABLE_NAME);
         tableMeta.addPrimaryKeyColumn(new PrimaryKeySchema(PRIMARY_KEY_NAME, PrimaryKeyType.STRING));
-
         int timeToLive = -1; // 数据的过期时间, 单位秒, -1代表永不过期. 假如设置过期时间为一年, 即为 365 * 24 * 3600.
         int maxVersions = 1; // 保存的最大版本数, 设置为1即代表每列上最多保存一个版本(保存最新的版本).
 
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(id == R.id.button){
 
 
-            opStringBuf.append("Click 'SUBMIT FORM' to see output");
+            opStringBuf.append("Form Submitted : ");
             // Get Name Input
             opStringBuf.append("\n Name given : "+nameValue.getEditableText());
             // Get Selected Age

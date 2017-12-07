@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/headingText"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:layout_margin="8dp"
+        android:text="Character Count"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headingText"
+        android:textColorHint="@color/colorPrimary"
+        android:id="@+id/countLayout"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:hintTextAppearance="@style/TextLabel"
+        >
+
+        <EditText
+            android:id="@+id/countValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:hint="Character Count" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/countLayout"
+        android:textColorHint="@color/colorPrimary"
+        android:id="@+id/ageMinLayout"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:hintTextAppearance="@style/TextLabel"
+        >
+
+        <EditText
+            android:id="@+id/ageMinValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:hint="Minimum Age" />
+
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ageMinLayout"
+        android:textColorHint="@color/colorPrimary"
+        android:id="@+id/ageMaxLayout"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:hintTextAppearance="@style/TextLabel"
+        >
+
+        <EditText
+            android:id="@+id/ageMaxValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:hint="Maximum Age" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ageMaxLayout"
+        android:textColorHint="@color/colorPrimary"
+        android:id="@+id/imageLayout"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:hintTextAppearance="@style/TextLabel"
+        >
+
+        <EditText
+            android:id="@+id/imageValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="18sp"
+            android:layout_marginTop="4dp"
+            android:hint="Maximum Age" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Update Configuration" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Updated Config:"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:id="@+id/output"
+        android:layout_below="@id/button"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        />
+
+
+</RelativeLayout>
