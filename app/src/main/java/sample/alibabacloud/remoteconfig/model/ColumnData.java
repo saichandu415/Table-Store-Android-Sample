@@ -10,6 +10,16 @@ public class ColumnData {
     private String maxAge;
     private String ImageNum;
 
+    public ColumnData(String charCount, String minAge, String maxAge, String imageNum) {
+        this.charCount = charCount;
+        this.minAge = minAge;
+        this.maxAge = maxAge;
+        ImageNum = imageNum;
+    }
+
+    public ColumnData() {
+    }
+
     public String getCharCount() {
         return charCount;
     }
