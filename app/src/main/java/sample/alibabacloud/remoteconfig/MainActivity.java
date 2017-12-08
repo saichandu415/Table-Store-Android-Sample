@@ -45,11 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nameInputLayout.setCounterEnabled(true);
 
         int minAge;
-        //Get Maximum Age
         int maxAge;
-        //Create and Add it to Array
 
-
+        //Logic for checking the App is installed first or existing
         SharedPreferences sharedPreferences = getSharedPreferences(WelcomeActivity.SHARED_PREF_FILE_NAME,MODE_PRIVATE);
         boolean isPresent = sharedPreferences.contains(WelcomeActivity.COUNT_KEY);
         if(isPresent){
@@ -64,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
         }else{
+            //if the app opening is new
             minAge = 18;
             maxAge = 35;
             nameInputLayout.setCounterMaxLength(20);
@@ -73,8 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for(int i =minAge;i<=maxAge;i++){
             ageArr[i-minAge] = String.valueOf(i);
         }
-        //Get Minimum Age
 
+        // set the values into the spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
         android.R.layout.simple_spinner_item,ageArr);
 

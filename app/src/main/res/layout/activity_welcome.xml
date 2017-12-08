@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/alibaba_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:id="@+id/alibaba_logo"
         android:layout_centerVertical="true"
-        android:src="@drawable/alibaba_cloud"/>
-
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/alibaba_cloud" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_below="@id/alibaba_logo"
+        android:layout_margin="8dp"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/userForm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="UserForm"
-            android:id="@+id/userForm"/>
+            android:text="UserForm" />
+
         <Button
+            android:id="@+id/remoteConfig"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="App Congig"
-            android:id="@+id/remoteConfig"/>
+            android:text="App Congig" />
 
     </LinearLayout>
 </RelativeLayout>
