@@ -1,6 +1,6 @@
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge)
-# MNS-Android-Sample
-This is the sample project created to demonstrate the usage of Alibaba Cloud Messaging and Notification Services.
+# Table-Store-Android-Sample
+This is the sample project created to demonstrate Table Store capabilities of the Alibaba Store
 
 ## Built using
 
