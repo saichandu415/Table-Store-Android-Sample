@@ -28,7 +28,7 @@ Please replace your information from your Alibaba Cloud console in "strings.xml"
 <resources>
     <string name="app_name">YOUR APP NAME</string>
 
-    <!-- Alibaba MNS Service details-->
+    <!-- Alibaba Table Store Service details-->
     <!-- Please replace this details with your own-->
     <!--Public Endpoint-->
     <string name="Endpoint">UPDATE YOUR ENDPOINT FOR QUEUES HERE</string>
